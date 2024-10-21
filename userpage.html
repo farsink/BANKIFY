@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANKFY-USER</title>
+    <link rel="stylesheet" href="user.css">
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=mLzZg2PFa2A4&format=png&color=000000">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+  <script src="./script.js"></script>
+   <header>
+    <nav class="navbar navbar-expand-lg stickey-top">
+        <div class="container-fluid p-5">
+    
+            <a class="navbar-brand hidden" href="#">BANK<span>F</span>Y</a>
+    
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="bullet-wrapper d-flex mt-0">
+             <span class="bullet">.</span>
+             <span class="bullet">.</span>
+             <span class="bullet">.</span>
+           </span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-between align-items-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">COMPANY</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">CONTACT</a>
+              </li>
+              <li class="nav-item">
+                <a  class="nav-link" href="#">FAQ</a>
+              </li>
+            </ul>
+    
+            <a class="navbar-brand mx-auto visible mt-2" href="#">BANK<span>F</span>Y</a>
+    
+    
+            <div class="d-flex align-items-center mb-3">
+              <button class="btn btn-login me-2" onclick="logout()">Log out</button>
+              <button class="btn btn-get-started" type="button" data-bs-toggle="offcanvas" data-bs-target="#SIGNUP" aria-controls="offcanvasWithBothOptions">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section>
+        <!-- Hero Section -->
+        <div class="container-fluid">
+          <div class="row mt-5">
+            <div class="col-md-4 col-sm-12"></div>
+              <div class="col-md-6 col-sm-12">
+                
+                <div class="modal-1">
+                  <div class="form-1">
+                    <div class="banner-1"></div>
+                    <label class="title-1" id="title-1">Cardless Cash Deposit</label>
+                    <p class="description">Bankfy’s cardless cash withdrawal and deposit service enables you to access your cash quickly and securely without needing your debit card. </p>
+                    <div class="tab-container-1">
+                      <button class="tab-1 tab--1" onclick="showForm('deposit')">Deposit</button>
+                      <button class="tab-1 tab--2" onclick="showForm('withdraw')">withdrawal</button>
+                      <div class="indicator" id="indicator"></div>
+                    </div>
+                <!-- deposit --> 
+                    <div class="depositform" id="depositform" style="display: flex;" >
+                        <div class="coolinput mx-auto w-100">
+                            <label for="input"  class="text">User ID:</label>
+                            <input type="text" placeholder="" name="input" class="input userid">
+                        </div>
+
+                        <div class="coolinput mx-auto w-100">
+                            <label for="input" class="text ">Password:</label>
+                            <input type="text" placeholder="" name="input" class="input userpassword">
+                        </div>
+
+                        <div class="coolinput mx-auto w-100">
+                            <label for="input" class="text ">Amount:</label>
+                            <input type="text" placeholder="In Dollors" name="input" class="input useramount">
+                        </div>
+                        
+                
+                        <div class="modal-1-footer">
+                      <label id="balancedepo" class="price">Balance :<sup>$</sup>0<sub></sub></label>
+                      <button class="upgrade-btn" onclick="deposit()" >Deposit</button>
+                    </div>
+                </div>
+                
+                    <!-- withdraw -->
+                    <div id="withdrawal-form" class="withdrawal-form" style="display: none;">
+                        <div class="coolinput mx-auto w-100">
+                            <label for="input" class="text ">User ID:</label>
+                            <input type="text" placeholder="" name="input" class="input id">
+                        </div>
+                      
+                        <div class="coolinput mx-auto w-100">
+                            <label for="input" class="text">Password:</label>
+                            <input type="text" placeholder="" name="input" class="input password">
+                        </div>
+                      
+                        <div class="coolinput mx-auto w-100">
+                            <label for="input" class="text ">Amount:</label>
+                            <input type="text" placeholder="In Dollors" name="input" class="input amount">
+                        </div>
+                        <div  class="modal-1-footer">
+                          <label id="balance" class="price">Balance :<sup>$</sup>0<sub></sub></label>
+                          <button class="upgrade-btn" onclick="withdraw()" id="withdraw-btn">Withdraw</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+              </div>
+              </div>
+              </div>
+      </section>
+   </header>
+
+
+   <script>
+    // balance update ^
+    console.log(balance);
+    document.getElementById("balance").innerHTML =`Balance :<sup>$</sup>${balance}<sub></sub>`
+    document.getElementById("balancedepo").innerHTML =`Balance :<sup>$</sup>${balance}<sub></sub>`
+    
+    
+   </script>
+   <!-- balance update ^ -->
+    <!-- Signup modal -->
+   <script>
+    function logout() {
+        // Redirect to index page
+        window.location.href = "/index.html";
+    }
+
+    function showForm(formType) {
+     event.preventDefault();
+     console.log(formType);
+     
+  if (formType === 'deposit') {
+    document.getElementById('depositform').style.display = 'flex';
+    document.getElementById('withdrawal-form').style.display = 'none';
+    document.getElementById('title-1').innerText = 'Cardless Cash Deposit';
+    document.getElementById('indicator').style.left = '2px'
+  } else {
+    document.getElementById('depositform').style.display = 'none';
+    document.getElementById('withdrawal-form').style.display = 'flex';
+    document.getElementById('title-1').innerText = 'Cardless Cash Withdrawal';
+    document.getElementById('indicator').style.left = 'calc(50% - 2px)'
+  }
+}
+
+
+function deposit(){
+        console.log("onside deposit");
+        
+        var userId = document.getElementById('depositform').querySelector('.userid').value;
+        var password = document.getElementById('depositform').querySelector('.userpassword').value;
+        var amount = document.getElementById('depositform').querySelector('.useramount').value;
+        
+        if(verifyUser(userId,password)){
+
+        var users = JSON.parse(localStorage.getItem('users'));
+        
+        
+        var userIndex = users.findIndex(user => user.username === userId);
+        console.log(userIndex);
+        
+          // update balance
+          if(userIndex !== -1){
+            // Update the balance
+            users[userIndex].balance += parseInt(amount);
+            
+            // Save the updated users back to localStorage
+            localStorage.setItem('users', JSON.stringify(users));
+            console.log(users);
+            
+            
+            // Update the UI
+            document.getElementById('balance').innerHTML = `<label class="price">Balance :<sup>$</sup>${users[userIndex].balance}<sub></sub></label>`;
+            document.getElementById('balancedepo').innerHTML = `<label class="price">Balance :<sup>$</sup>${users[userIndex].balance}<sub></sub></label>`;
+            console.log('Deposit successful');
+            console.log(users[userIndex].balance);
+        }
+        else{
+          console.log("invalid user");
+          
+        }
+      }
+      else{
+        alert("invalid user & password");
+      }
+    }
+
+    function withdraw(){
+      
+      var userId = document.getElementById('withdrawal-form').querySelector('.id').value
+      var password = document.getElementById('withdrawal-form').querySelector('.password').value;
+      var amount = document.getElementById('withdrawal-form').querySelector('.amount').value;
+      
+
+      console.log(userId, password, amount);
+      
+      if(verifyUser(userId,password)){
+        var users = JSON.parse(localStorage.getItem('users'));
+        
+        
+        var userIndex = users.findIndex(user => user.username === userId);
+        console.log(userIndex);
+        if(userIndex !== -1){
+            // Update the balance
+            users[userIndex].balance -= parseInt(amount);
+            
+            // Save the updated users back to localStorage
+            localStorage.setItem('users', JSON.stringify(users));
+            console.log(users);
+            
+            
+            // Update the UI
+            document.getElementById('balancedepo').innerHTML = `<label class="price">Balance :<sup>$</sup>${users[userIndex].balance}<sub></sub></label>`;
+            document.getElementById('balance').innerHTML = `<label class="price">Balance :<sup>$</sup>${users[userIndex].balance}<sub></sub></label>`;
+            console.log('Deposit successful');
+            console.log(users[userIndex].balance);
+        }
+        else{
+          console.log("invalid user");
+          
+        }
+
+
+      
+    }
+    else{
+      alert("invalid user & password");
+      
+    }
+  }
+    </script>
+    <!-- transaction -->
+ 
+</body>
+
+
+</html>
